@@ -13,7 +13,7 @@
   </head>
   <body id="home">
    <!-- navbar -->
-   <nav class="navbar navbar-expand-lg navbar-dark shadow-lg fixed-top" style="background-color: #000e8994;">
+   <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: #213448;">
   <div class="container">
     <a class="navbar-brand" href="#home">Ajai DF.</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#353e91" fill-opacity="1" d="M0,128L40,138.7C80,149,160,171,240,154.7C320,139,400,85,480,74.7C560,64,640,96,720,90.7C800,85,880,43,960,58.7C1040,75,1120,149,1200,154.7C1280,160,1360,96,1400,64L1440,32L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#94b4c1" fill-opacity="1" d="M0,128L40,138.7C80,149,160,171,240,154.7C320,139,400,85,480,74.7C560,64,640,96,720,90.7C800,85,880,43,960,58.7C1040,75,1120,149,1200,154.7C1280,160,1360,96,1400,64L1440,32L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 </section>
 <!-- end -->
 
@@ -139,20 +139,28 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                <form>
+                  <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                    <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <form name="submit-to-google-sheet">
   <div class="mb-3">
     <label for="name" class="form-label">Nama Lengkap</label>
-    <input type="text" class="form-control" id="name" aria-describedby="name">
+    <input type="text" class="form-control" id="name" aria-describedby="name" name="nama">
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Email</label>
-    <input type="text" class="form-control" id="email" aria-describedby="email">
+    <input type="text" class="form-control" id="email" aria-describedby="email" name="email">
   </div>
   <div class="mb-3">
   <label for="pesan" class="form-label">Pesan</label>
-  <textarea class="form-control" id="pesan" rows="3"></textarea>
+  <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
 </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary btn-kirim">Submit</button>
+  <button class="btn btn-primary btn-loading d-none" type="button " disabled>
+    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+    <span role="status">Loading...</span>
+  </button>
 </form>
 </div>     
         </div>
@@ -160,13 +168,13 @@
         <br>
    <!--rate  -->
         
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0C134F" fill-opacity="1" d="M0,192L21.8,181.3C43.6,171,87,149,131,138.7C174.5,128,218,128,262,149.3C305.5,171,349,213,393,197.3C436.4,181,480,107,524,96C567.3,85,611,139,655,160C698.2,181,742,171,785,160C829.1,149,873,139,916,160C960,181,1004,235,1047,224C1090.9,213,1135,139,1178,122.7C1221.8,107,1265,149,1309,176C1352.7,203,1396,213,1418,218.7L1440,224L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#213448" fill-opacity="1" d="M0,192L21.8,181.3C43.6,171,87,149,131,138.7C174.5,128,218,128,262,149.3C305.5,171,349,213,393,197.3C436.4,181,480,107,524,96C567.3,85,611,139,655,160C698.2,181,742,171,785,160C829.1,149,873,139,916,160C960,181,1004,235,1047,224C1090.9,213,1135,139,1178,122.7C1221.8,107,1265,149,1309,176C1352.7,203,1396,213,1418,218.7L1440,224L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>
 
 
 <!-- end -->
 
 <!-- footer -->
-<footer class="text-white text-center pb-5" style="background-color: #0C134F ;">
+<footer class="text-white text-center pb-5" style="background-color: #213448 ;">
 <P> Created By <a href="https://www.instagram.com/ajai_df/" class="text-white fw-bold">Ajai Darman Fauji</a></P>
 </footer>
 <!-- end -->
@@ -181,6 +189,31 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzT6y64Zv_cilhEfyitlObCt2hLjG0BVwuFHWA7ye1V9xz63vIskH-ns-4uPOfA_3eDnA/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const btnKirim = document.querySelector('.btn-kirim');
+  const btnLoading = document.querySelector('.btn-loading');
+  const myAlert = document.querySelector('.my-alert');
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    //  ketika tombol submit di klik // tampil tombol loading
+    btnLoading.classList.toggle('d-none');
+    btnKirim.classList.toggle('d-none');
+    
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        //  menampilkan alert
+    myAlert.classList.toggle('d-none');
+    //reset
+    form.reset();
+        console.log('Success!', response)})
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
   </body>
 </html>
